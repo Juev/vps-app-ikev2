@@ -1,0 +1,20 @@
+version: '2'
+
+services:
+  app:
+    cap_add:
+      - NET_ADMIN
+    image: nebukad/ikev2-vpn-alpine
+    container_name: ikev2
+    ports:
+      - "500:500/udp"
+      - "4500:4500/udp"
+    logging:
+      driver: none
+    restart: always
+    volumes:
+      - ./conf/strongswan.conf:/etc/strongswan.conf
+      - ./conf/ipsec.secrets:/etc/ipsec.secrets
+    environment:
+      - HOST=138.197.183.11
+      - HOSTNAME=vpn.snupt.com
