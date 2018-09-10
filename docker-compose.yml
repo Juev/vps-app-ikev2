@@ -14,7 +14,6 @@ services:
     restart: always
     volumes:
       - ./conf/strongswan.conf:/etc/strongswan.conf
-      - ./conf/ipsec.secrets:/etc/ipsec.secrets
     environment:
       - HOST=138.197.183.11
       - HOSTNAME=vpn.snupt.com
