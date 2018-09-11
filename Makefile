@@ -11,4 +11,4 @@ logs:
 	docker-compose logs
 
 create-client:
-	docker-compose exec $N generate-mobileconfig > ./client/$C.mobileconfig
+	docker-compose exec $N generate-mobileconfig > ./$C.mobileconfig
